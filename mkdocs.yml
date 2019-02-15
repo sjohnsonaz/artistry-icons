@@ -1,0 +1,7 @@
+site_name: Artistry Icons
+site_url: https://sjohnsonaz.github.io/artistry-icons
+repo_url: https://github.com/sjohnsonaz/artistry-icons
+copyright: Copyright &copy; 2019 Sean Johnson
+pages:
+    - Home: index.md
+theme: readthedocs

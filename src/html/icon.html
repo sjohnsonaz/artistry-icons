@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Icon</title>
+</head>
+
+<body>
+    <h1>Icon</h1>
+    <div style="height: 200px; width: 200px;">
+        <svg viewBox="0 0 512 512">
+            <use href="#chevron-right" />
+        </svg>
+    </div>
+    <div style="height: 200px; width: 200px;">
+        <svg viewBox="0 0 512 512">
+            <use xlink:href="icons.svg#chevron-right" />
+        </svg>
+    </div>
+
+    <div style="display: none;">
+        <svg viewBox="0 0 512 512">
+            <g id="chevron-right">
+                <path fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"
+                    d="
+                    M 40 40
+                    L 472 256
+                    L 40 472 
+                " />
+            </g>
+        </svg>
+    </div>
+</body>
+
+</html>
