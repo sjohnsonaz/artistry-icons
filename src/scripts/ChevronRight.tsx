@@ -1,4 +1,4 @@
-import Icons, { Icon } from './Icons';
+import { Icon, createElement } from './Icons';
 
 export default class ChevronRight extends Icon {
     name: 'chevron-right'

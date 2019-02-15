@@ -77,6 +77,8 @@ export default class Icons {
     }
 }
 
+export let createElement = Icons.createElement;
+
 export abstract class Icon {
     name: string;
     abstract render<T extends SVGElement>(): T;
