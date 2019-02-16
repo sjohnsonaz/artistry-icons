@@ -1,3 +1,6 @@
+import { Icon } from './Icon';
+import FontAwesomeIcon, { IFontAwesomeDefinition } from './FontAwesomeIcon';
+
 export default class Icons {
     static icons: {
         [index: string]: Icon;
@@ -6,6 +9,20 @@ export default class Icons {
     static registerIcon(iconConstructor: new () => Icon) {
         let icon = new iconConstructor();
         this.icons[icon.name] = icon;
+    }
+
+    static registerFontAwesomeIcon(definition: IFontAwesomeDefinition) {
+        let icon = new FontAwesomeIcon(definition);
+        this.icons[icon.name] = icon;
+    }
+
+    static registerFontAwesome(definitions: { [index: string]: IFontAwesomeDefinition }) {
+        for (let name in definitions) {
+            if (definitions.hasOwnProperty(name)) {
+                let definition = definitions[name];
+                Icons.registerFontAwesomeIcon(definition);
+            }
+        }
     }
 
     static renderSVG(name: string) {
@@ -35,6 +52,26 @@ export default class Icons {
         return i;
     }
 
+    static renderJSX(name: string) {
+        return (
+            <i className="icon">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <use href={'#' + name} />
+                </svg>
+            </i>
+        );
+    }
+
+    static renderJSXFull(name: string) {
+        return (
+            <i className="icon">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    {Icons.renderSVG(name)}
+                </svg>
+            </i>
+        );
+    }
+
     static createIconRoot() {
         let iconRoot = document.createElement('div');
         iconRoot.style.display = 'none';
@@ -48,7 +85,7 @@ export default class Icons {
         return iconRoot;
     }
 
-    static createElement<T extends Partial<U>, U extends SVGElement>(type: string, props?: T, ...children: Array<any>): U {
+    static defaultCreateElement<T extends Partial<U>, U extends SVGElement>(type: string, props?: T, ...children: Array<any>): U {
         let element = document.createElementNS('http://www.w3.org/2000/svg', type) as U;
         if (props) {
             for (let property in props) {
@@ -75,11 +112,9 @@ export default class Icons {
         }
         return element;
     }
-}
 
-export let createElement = Icons.createElement;
-
-export abstract class Icon {
-    name: string;
-    abstract render<T extends SVGElement>(): T;
+    static createElement = Icons.defaultCreateElement;
+    static setCreateElement(method: any) {
+        this.createElement = method;
+    }
 }

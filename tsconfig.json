@@ -6,7 +6,7 @@
     "moduleResolution": "node",
     "isolatedModules": false,
     "jsx": "react",
-    "jsxFactory": "createElement",
+    "jsxFactory": "Icons.createElement",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declaration": false,
