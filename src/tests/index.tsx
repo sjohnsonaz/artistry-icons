@@ -1,5 +1,5 @@
-import ChevronRight from './ChevronRight';
-import Icons from './Icons';
+import ChevronRight from '../scripts/ChevronRight';
+import Icons from '../scripts/Icons';
 import * as faSearch from '@fortawesome/free-solid-svg-icons/faSearch';
 import * as FontAwesome from '@fortawesome/free-solid-svg-icons';
 
@@ -18,5 +18,3 @@ function run() {
 window.onload = function () {
     console.log(run());
 }
-
-export default Icons
