@@ -73,7 +73,7 @@ export default class Icons {
     }
 
     static createIconRoot() {
-        let iconRoot = document.createElement('div');
+        let iconRoot = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         iconRoot.style.display = 'none';
 
         for (let name in this.icons) {
