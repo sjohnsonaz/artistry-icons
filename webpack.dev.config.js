@@ -1,7 +1,7 @@
 module.exports = {
     mode: 'development',
     entry: {
-        'main': './src/scripts/main.ts',
+        'main': './src/tests/index.tsx',
         'mochaRunner': './src/mocha/BrowserRunner.ts'
     },
     output: {

@@ -1,7 +1,7 @@
 module.exports = {
     mode: 'production',
     entry: {
-        'main': './src/scripts/main.ts'
+        'main': './src/tests/index.tsx'
     },
     output: {
         filename: './bundle/[name].min.js',
