@@ -1,18 +1,13 @@
+import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+
 import Icons from './Icons';
-
 import { Icon } from './Icon';
-
-export interface IFontAwesomeDefinition {
-    prefix: string;
-    iconName: string;
-    icon: [number, number, string[], string, string];
-}
 
 export default class FontAwesomeIcon extends Icon {
     name: string;
-    definition: IFontAwesomeDefinition
+    definition: IconDefinition
 
-    constructor(definition: IFontAwesomeDefinition) {
+    constructor(definition: IconDefinition) {
         super();
         this.definition = definition;
         this.name = definition.iconName;

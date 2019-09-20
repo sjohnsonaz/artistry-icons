@@ -1,5 +1,7 @@
+import { IconDefinition, IconPack } from '@fortawesome/fontawesome-common-types';
+
 import { Icon } from './Icon';
-import FontAwesomeIcon, { IFontAwesomeDefinition } from './FontAwesomeIcon';
+import FontAwesomeIcon from './FontAwesomeIcon';
 
 export default class Icons {
     static icons: {
@@ -11,12 +13,12 @@ export default class Icons {
         this.icons[icon.name] = icon;
     }
 
-    static registerFontAwesomeIcon(definition: IFontAwesomeDefinition) {
+    static registerFontAwesomeIcon(definition: IconDefinition) {
         let icon = new FontAwesomeIcon(definition);
         this.icons[icon.name] = icon;
     }
 
-    static registerFontAwesome(definitions: { [index: string]: IFontAwesomeDefinition }) {
+    static registerFontAwesome(definitions: IconPack) {
         for (let name in definitions) {
             if (definitions.hasOwnProperty(name)) {
                 let definition = definitions[name];

@@ -1,6 +1,6 @@
 import ChevronRight from '../scripts/ChevronRight';
 import Icons from '../scripts/Icons';
-import * as faSearch from '@fortawesome/free-solid-svg-icons/faSearch';
+
 import * as FontAwesome from '@fortawesome/free-solid-svg-icons';
 
 function run() {
@@ -11,7 +11,7 @@ function run() {
     window.document.body.appendChild(Icons.renderIcon('chevron-right'));
     window.document.body.appendChild(Icons.renderIcon('search'));
     window.document.body.appendChild(Icons.renderIcon('user'));
-    console.log(FontAwesome);
+    //console.log(FontAwesome);
     return 'Application started...';
 }
 
